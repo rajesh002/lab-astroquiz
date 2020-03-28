@@ -19,7 +19,11 @@ public class Eligibility extends HttpServlet {
 
 	String points=request.getParameter("points");
 	
-	if(false)
+	EligibiltyCheck ec=new EligibiltyCheck();
+	
+	boolean spaceEligible=ec.checkQuizAnswer(points);
+	
+	if(spaceEligible)
 	{
 		RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/success.html");
 		rd.forward(request, response);	

@@ -46,7 +46,10 @@ public class EligibilityViewController extends HttpServlet {
 		user.setHeight(height);
 		user.setWeight(weight);
 		
-		System.out.println(spaceEligible);
+		EligibiltyCheck ec=new EligibiltyCheck();
+		boolean spaceEligible=ec.checkUser(user);
+		
+		
 			if(spaceEligible)
 			{
 				RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/quiz.jsp");
